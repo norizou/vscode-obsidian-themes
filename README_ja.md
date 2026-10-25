@@ -7,6 +7,7 @@
 | ラベル | 種別 | 内容 |
 |---|---|---|
 | Baystars Light | ライト | 白×スターマンクリーム基調、横浜ブルーアクセント |
+| Baystars Light Neon | ライト | 明るいクリーム基調に電光ブルー/ピンク/アンバーのビビッド配色 |
 | Baystars Dark | ダーク | 濃紺 #0B1D30（ハマスタの夜空）基調 |
 | Baystars Dark Neon | ダーク | ほぼ黒の紺 #050D18 に蛍光ブルー/イエロー/ピンク |
 
@@ -64,9 +65,10 @@ done
 ## ファイル構成
 
 ```
-package.json              … VSCode拡張機能マニフェスト（themes を3件 contribute）
+package.json              … VSCode拡張機能マニフェスト（themes を4件 contribute）
 themes/                   … VSCode系テーマ
   baystars-light.json     … Light
+  baystars-light-neon.json … Light Neon
   baystars-dark.json      … Dark
   baystars-neon.json      … Dark Neon
 obsidian/

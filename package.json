@@ -1,7 +1,7 @@
 {
   "name": "baystars-theme",
   "displayName": "Baystars Theme",
-  "description": "横浜DeNAベイスターズ チームカラー + マスコット配色（DB.スターマン / DB.キララ / チャピー）のテーマ。Light / Dark / Dark Neon の3バリアント。",
+  "description": "横浜DeNAベイスターズ チームカラー + マスコット配色（DB.スターマン / DB.キララ / チャピー）のテーマ。Light / Dark / Dark Neon / Light Neon の4バリアント。",
   "version": "1.0.0",
   "publisher": "norihito",
   "engines": {
@@ -26,6 +26,11 @@
         "label": "Baystars Dark Neon",
         "uiTheme": "vs-dark",
         "path": "./themes/baystars-neon.json"
+      },
+      {
+        "label": "Baystars Light Neon",
+        "uiTheme": "vs",
+        "path": "./themes/baystars-light-neon.json"
       }
     ]
   }
