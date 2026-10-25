@@ -1,0 +1,500 @@
+/* ============================================================
+   Baystars Theme for Obsidian
+   横浜DeNAベイスターズ チームカラー + マスコット配色
+   （DB.スターマン / DB.キララ / チャピー BART&CHAPY）
+
+   Minimal Theme をベースに @import で読み込み、
+   ライト/ダーク両モードの変数・パーツを上書きする。
+   ============================================================ */
+
+@import "../Minimal/theme.css";
+
+/* ============================================================
+   LIGHT MODE
+   ============================================================ */
+
+body.theme-light {
+
+  /* ---- パレット ---- */
+  --bay-blue:            #0055A5; /* 横浜ブルー（メイン） */
+  --bay-light-blue:      #0092E1; /* 横浜ライトブルー */
+  --bay-navy:            #003A70; /* 濃紺 */
+  --star-yellow:         #FAE44E; /* スターイエロー */
+  --star-yellow-strong:  #FFEA00;
+  --chappy-yellow:       #F9C700; /* チャピー（ヒヨコ黄） */
+  --chappy-yellow-soft:  #FFE066;
+  --starman-cream:       #FDF6E3; /* スターマンの毛色 */
+  --starman-cream-deep:  #F6ECD6;
+  --kirara-red:          #E60033; /* キララのリボン / Bibon */
+  --bay-white:           #FFFDF7;
+
+  /* ---- アクセントカラー（アプリ全体に効く） ---- */
+  --accent-h: 209;
+  --accent-s: 100%;
+  --accent-l: 33%;
+
+  /* ---- 背景 ---- */
+  --background-primary:         var(--bay-white);
+  --background-primary-alt:     var(--starman-cream);
+  --background-secondary:       var(--starman-cream);
+  --background-secondary-alt:   var(--starman-cream-deep);
+  --background-modifier-hover:  rgba(0, 92, 225, 0.07);
+  --background-modifier-active-hover: rgba(0, 92, 225, 0.12);
+  --background-modifier-border: #E3D9BF;
+
+  /* ---- テキスト選択・ハイライト ---- */
+  --text-selection:    rgba(0, 146, 225, 0.22);
+  --text-highlight-bg: rgba(249, 199, 0, 0.45);   /* チャピー黄の蛍光ペン */
+  --caret-color:       var(--bay-blue);
+
+  /* ---- リンク ---- */
+  --link-color:            var(--bay-blue);
+  --link-color-hover:      var(--bay-light-blue);
+  --link-external-color:   var(--bay-blue);
+  --link-unresolved-color: var(--kirara-red);
+
+  /* ---- 見出し ---- */
+  --h1-color: var(--bay-blue);
+  --h2-color: var(--bay-blue);
+  --h3-color: var(--bay-navy);
+  --h4-color: var(--bay-navy);
+  --h5-color: var(--bay-light-blue);
+  --h6-color: var(--bay-light-blue);
+
+  --inline-title-color: var(--bay-navy);
+  --bold-color:         var(--bay-navy);
+  --italic-color:       var(--bay-light-blue);
+
+  /* ---- コード ---- */
+  --code-background: var(--starman-cream-deep);
+  --code-normal:     var(--bay-navy);
+  --code-comment:    #7A7264;
+  --code-keyword:    var(--bay-blue);
+  --code-string:     #B8860B;
+  --code-function:   var(--bay-light-blue);
+
+  /* ---- タグ ---- */
+  --tag-color:        var(--bay-navy);
+  --tag-color-hover:  var(--bay-blue);
+  --tag-background:   var(--chappy-yellow-soft);
+  --tag-background-hover: var(--chappy-yellow);
+
+  /* ---- チェックボックス ---- */
+  --checkbox-color:          var(--bay-blue);
+  --checkbox-color-hover:    var(--bay-light-blue);
+  --checkbox-border-color:   var(--bay-blue);
+  --checkbox-border-color-hover: var(--bay-light-blue);
+
+  /* ---- 引用 ---- */
+  --blockquote-border-color:     var(--bay-blue);
+  --blockquote-background-color: var(--starman-cream);
+
+  /* ---- コールアウト ---- */
+  --callout-info:    0, 85, 165;    /* 横浜ブルー */
+  --callout-todo:    0, 146, 225;   /* ライトブルー */
+  --callout-tip:     249, 199, 0;   /* チャピー黄 */
+  --callout-success: 0, 146, 225;
+  --callout-question: 249, 199, 0;
+  --callout-warning: 230, 0, 51;    /* キララレッド */
+  --callout-fail:    230, 0, 51;
+  --callout-bug:     230, 0, 51;
+  --callout-example: 0, 85, 165;
+  --callout-quote:   122, 114, 100;
+
+  /* ---- 水平線 ---- */
+  --hr-color: rgba(0, 85, 165, 0.35);
+
+  /* ---- スクロールバー ---- */
+  --scrollbar-thumb-bg: rgba(0, 85, 165, 0.30);
+  --scrollbar-active-thumb-bg: rgba(0, 85, 165, 0.55);
+
+  /* ---- グラフビュー ---- */
+  --graph-node:            var(--bay-blue);
+  --graph-node-unresolved: #B9B29E;
+  --graph-node-tag:        var(--chappy-yellow);
+  --graph-node-attachment: var(--bay-light-blue);
+  --graph-node-focused:    var(--kirara-red);
+  --graph-line:            rgba(0, 146, 225, 0.4);
+  --graph-text:            var(--bay-navy);
+
+  /* ---- そのほか UI ---- */
+  --interactive-normal:     var(--starman-cream-deep);
+  --interactive-hover:      #EFE3C6;
+  --interactive-accent:     var(--bay-blue);
+  --interactive-accent-hover: var(--bay-light-blue);
+  --text-on-accent:         #FFFFFF;
+  --divider-color:          #E3D9BF;
+  --nav-item-color-active:  var(--bay-navy);
+  --nav-item-background-active: rgba(0, 146, 225, 0.15);
+}
+
+/* ---- LIGHT: 個別パーツ ---- */
+
+/* H1 に ☆ を添える（ベイスターズロゴ風：黄の星に青い縁取り） */
+body.theme-light .markdown-preview-view h1::before,
+body.theme-light .markdown-rendered h1::before,
+body.theme-light .cm-line.HyperMD-header-1::before {
+  content: "★ ";
+  color: var(--star-yellow);
+  -webkit-text-stroke: 1.2px var(--bay-blue);
+  text-shadow: none;
+}
+
+/* H1 下線を青→黄グラデーション */
+body.theme-light .markdown-preview-view h1,
+body.theme-light .markdown-rendered h1 {
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(90deg, var(--bay-blue) 0%, var(--star-yellow) 60%, transparent 100%) 1;
+  padding-bottom: 0.15em;
+}
+
+/* H2 は左端にブルーのライン */
+body.theme-light .markdown-preview-view h2,
+body.theme-light .markdown-rendered h2 {
+  border-left: 5px solid var(--bay-light-blue);
+  padding-left: 0.5em;
+}
+
+/* 水平線は青→黄→青のグラデーション */
+body.theme-light .markdown-preview-view hr,
+body.theme-light .markdown-rendered hr,
+body.theme-light .cm-line hr {
+  border: none;
+  height: 3px;
+  background: linear-gradient(90deg,
+    transparent, var(--bay-blue) 25%, var(--star-yellow) 50%,
+    var(--bay-blue) 75%, transparent);
+  margin: 2em 0;
+}
+
+/* タグをチャピー黄のピル型に */
+body.theme-light a.tag,
+body.theme-light .cm-hashtag {
+  background-color: var(--tag-background);
+  color: var(--tag-color);
+  border: 1px solid rgba(0, 85, 165, 0.35);
+  border-radius: 999px;
+  padding: 0 0.55em;
+  text-decoration: none;
+}
+body.theme-light a.tag:hover {
+  background-color: var(--tag-background-hover);
+  color: var(--bay-blue);
+}
+
+/* ファイルツリー：アクティブノートをブルー系に */
+body.theme-light .nav-file-title.is-active {
+  background-color: rgba(0, 146, 225, 0.15);
+  color: var(--bay-navy);
+  font-weight: 600;
+  border-radius: 6px;
+}
+body.theme-light .nav-file-title.is-active .nav-file-title-content::before {
+  content: "★ ";
+  color: var(--star-yellow-strong);
+}
+body.theme-light .nav-folder-title {
+  color: var(--bay-navy);
+}
+
+/* タブ：アクティブタブに青いインジケータ */
+body.theme-light .workspace-tab-header.is-active {
+  box-shadow: inset 0 -3px 0 var(--bay-blue);
+}
+body.theme-light .workspace-tab-header.is-active .workspace-tab-header-inner-title {
+  color: var(--bay-navy);
+  font-weight: 600;
+}
+
+/* ステータスバー：クリーム地 + 上辺ブルー */
+body.theme-light .status-bar {
+  background-color: var(--starman-cream);
+  border-top: 2px solid var(--bay-blue);
+  color: var(--bay-navy);
+}
+
+/* リボンのアイコン hover をライトブルーに */
+body.theme-light .side-dock-ribbon-action:hover,
+body.theme-light .workspace-ribbon .sidebar-action-button:hover {
+  color: var(--bay-light-blue);
+}
+
+/* ボタン（mod-cta） */
+body.theme-light button.mod-cta {
+  background-color: var(--bay-blue);
+}
+body.theme-light button.mod-cta:hover {
+  background-color: var(--bay-light-blue);
+}
+
+/* インラインコード・コードブロック */
+body.theme-light code {
+  border: 1px solid rgba(0, 85, 165, 0.18);
+  border-radius: 4px;
+}
+body.theme-light .markdown-preview-view pre,
+body.theme-light .markdown-rendered pre {
+  border: 1px solid rgba(0, 85, 165, 0.25);
+  border-left: 4px solid var(--bay-blue);
+  border-radius: 8px;
+}
+
+/* 引用ブロック：角を丸く */
+body.theme-light .markdown-preview-view blockquote,
+body.theme-light .markdown-rendered blockquote {
+  border-radius: 0 8px 8px 0;
+}
+
+/* mark（==ハイライト==）は文字色を濃紺に固定 */
+body.theme-light mark {
+  color: var(--bay-navy);
+}
+
+/* ============================================================
+   DARK MODE（スタンダード：濃紺の夜）
+   ネオン版にしたいときは CSSスニペット baystars-theme-neon をON
+   ============================================================ */
+
+body.theme-dark {
+
+  /* ---- パレット ---- */
+  --bay-blue:            #3AA3F0; /* ダーク用に明るくした横浜ブルー */
+  --bay-blue-deep:       #0055A5; /* 本来の横浜ブルー（背景・ボーダー用） */
+  --bay-light-blue:      #4FC3F7; /* ライトブルー（明度UP） */
+  --bay-navy-bg:         #0B1D30; /* ベース背景：ハマスタの夜空 */
+  --bay-navy-bg-2:       #10273E; /* サイドバー等 */
+  --bay-navy-surface:    #16334F; /* カード・コード面 */
+  --star-yellow:         #FAE44E; /* スターイエロー */
+  --star-yellow-strong:  #FFEA00;
+  --chappy-yellow:       #F9C700; /* チャピー（ヒヨコ黄） */
+  --starman-cream:       #EDE6D3; /* スターマンの毛色 → 本文テキスト */
+  --kirara-red:          #FF4060; /* キララのリボン（明度UP） */
+  --bay-white:           #F5EFE0;
+
+  /* ---- アクセントカラー（アプリ全体に効く） ---- */
+  --accent-h: 205;
+  --accent-s: 86%;
+  --accent-l: 58%;
+
+  /* ---- 背景 ---- */
+  --background-primary:         var(--bay-navy-bg);
+  --background-primary-alt:     var(--bay-navy-bg-2);
+  --background-secondary:       var(--bay-navy-bg-2);
+  --background-secondary-alt:   #0A1826;
+  --background-modifier-hover:  rgba(79, 195, 247, 0.10);
+  --background-modifier-active-hover: rgba(79, 195, 247, 0.18);
+  --background-modifier-border: #27455F;
+
+  /* ---- テキスト ---- */
+  --text-normal: var(--starman-cream);
+  --text-muted:  #9FB3C4;
+  --text-faint:  #6B8299;
+
+  /* ---- テキスト選択・ハイライト ---- */
+  --text-selection:    rgba(0, 146, 225, 0.35);
+  --text-highlight-bg: rgba(249, 199, 0, 0.38);   /* チャピー黄の蛍光ペン */
+  --caret-color:       var(--bay-light-blue);
+
+  /* ---- リンク ---- */
+  --link-color:            var(--bay-light-blue);
+  --link-color-hover:      #8FD8FF;
+  --link-external-color:   var(--bay-light-blue);
+  --link-unresolved-color: var(--kirara-red);
+
+  /* ---- 見出し ---- */
+  --h1-color: var(--bay-light-blue);
+  --h2-color: var(--bay-light-blue);
+  --h3-color: var(--starman-cream);
+  --h4-color: var(--starman-cream);
+  --h5-color: #8FD8FF;
+  --h6-color: #8FD8FF;
+
+  --inline-title-color: var(--bay-white);
+  --bold-color:         #FFFFFF;
+  --italic-color:       var(--bay-light-blue);
+
+  /* ---- コード ---- */
+  --code-background: var(--bay-navy-surface);
+  --code-normal:     #C9E4F5;
+  --code-comment:    #5F7A92;
+  --code-keyword:    var(--bay-light-blue);
+  --code-string:     var(--star-yellow);
+  --code-function:   #8FD8FF;
+
+  /* ---- タグ ---- */
+  --tag-color:        #1A1400;
+  --tag-color-hover:  #000000;
+  --tag-background:   var(--chappy-yellow);
+  --tag-background-hover: var(--star-yellow);
+
+  /* ---- チェックボックス ---- */
+  --checkbox-color:          var(--bay-blue);
+  --checkbox-color-hover:    var(--bay-light-blue);
+  --checkbox-border-color:   var(--bay-blue);
+  --checkbox-border-color-hover: var(--bay-light-blue);
+
+  /* ---- 引用 ---- */
+  --blockquote-border-color:     var(--bay-blue);
+  --blockquote-background-color: var(--bay-navy-surface);
+
+  /* ---- コールアウト ---- */
+  --callout-info:    79, 195, 247;
+  --callout-todo:    58, 163, 240;
+  --callout-tip:     249, 199, 0;
+  --callout-success: 79, 195, 247;
+  --callout-question: 249, 199, 0;
+  --callout-warning: 255, 64, 96;
+  --callout-fail:    255, 64, 96;
+  --callout-bug:     255, 64, 96;
+  --callout-example: 79, 195, 247;
+  --callout-quote:   159, 179, 196;
+
+  /* ---- 水平線 ---- */
+  --hr-color: rgba(79, 195, 247, 0.4);
+
+  /* ---- スクロールバー ---- */
+  --scrollbar-thumb-bg: rgba(79, 195, 247, 0.28);
+  --scrollbar-active-thumb-bg: rgba(79, 195, 247, 0.5);
+
+  /* ---- グラフビュー ---- */
+  --graph-node:            var(--bay-light-blue);
+  --graph-node-unresolved: #4A5E72;
+  --graph-node-tag:        var(--chappy-yellow);
+  --graph-node-attachment: #8FD8FF;
+  --graph-node-focused:    var(--kirara-red);
+  --graph-line:            rgba(79, 195, 247, 0.3);
+  --graph-text:            var(--starman-cream);
+
+  /* ---- そのほか UI ---- */
+  --interactive-normal:     var(--bay-navy-surface);
+  --interactive-hover:      #1D4265;
+  --interactive-accent:     var(--bay-blue);
+  --interactive-accent-hover: var(--bay-light-blue);
+  --text-on-accent:         #04111F;
+  --divider-color:          #27455F;
+  --nav-item-color-active:  var(--bay-white);
+  --nav-item-background-active: rgba(79, 195, 247, 0.18);
+}
+
+/* ---- DARK: 個別パーツ ---- */
+
+/* H1 に ☆ を添える（黄の星にブルーの縁取り） */
+body.theme-dark .markdown-preview-view h1::before,
+body.theme-dark .markdown-rendered h1::before,
+body.theme-dark .cm-line.HyperMD-header-1::before {
+  content: "★ ";
+  color: var(--star-yellow);
+  -webkit-text-stroke: 1.2px var(--bay-blue-deep);
+  text-shadow: none;
+}
+
+/* H1 下線を青→黄グラデーション */
+body.theme-dark .markdown-preview-view h1,
+body.theme-dark .markdown-rendered h1 {
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(90deg, var(--bay-light-blue) 0%, var(--star-yellow) 60%, transparent 100%) 1;
+  padding-bottom: 0.15em;
+}
+
+/* H2 は左端にライトブルーのライン */
+body.theme-dark .markdown-preview-view h2,
+body.theme-dark .markdown-rendered h2 {
+  border-left: 5px solid var(--bay-light-blue);
+  padding-left: 0.5em;
+}
+
+/* 水平線は青→黄→青のグラデーション */
+body.theme-dark .markdown-preview-view hr,
+body.theme-dark .markdown-rendered hr,
+body.theme-dark .cm-line hr {
+  border: none;
+  height: 3px;
+  background: linear-gradient(90deg,
+    transparent, var(--bay-light-blue) 25%, var(--star-yellow) 50%,
+    var(--bay-light-blue) 75%, transparent);
+  margin: 2em 0;
+}
+
+/* タグをチャピー黄のピル型に（文字は濃紺） */
+body.theme-dark a.tag,
+body.theme-dark .cm-hashtag {
+  background-color: var(--tag-background);
+  color: var(--tag-color);
+  border: 1px solid rgba(255, 234, 0, 0.5);
+  border-radius: 999px;
+  padding: 0 0.55em;
+  text-decoration: none;
+  font-weight: 600;
+}
+body.theme-dark a.tag:hover {
+  background-color: var(--tag-background-hover);
+}
+
+/* ファイルツリー：アクティブノートをブルー系に */
+body.theme-dark .nav-file-title.is-active {
+  background-color: rgba(79, 195, 247, 0.18);
+  color: var(--bay-white);
+  font-weight: 600;
+  border-radius: 6px;
+}
+body.theme-dark .nav-file-title.is-active .nav-file-title-content::before {
+  content: "★ ";
+  color: var(--star-yellow-strong);
+}
+body.theme-dark .nav-folder-title {
+  color: #C9D9E6;
+}
+
+/* タブ：アクティブタブに青いインジケータ */
+body.theme-dark .workspace-tab-header.is-active {
+  box-shadow: inset 0 -3px 0 var(--bay-blue);
+}
+body.theme-dark .workspace-tab-header.is-active .workspace-tab-header-inner-title {
+  color: var(--bay-white);
+  font-weight: 600;
+}
+
+/* ステータスバー：濃紺 + 上辺ブルー */
+body.theme-dark .status-bar {
+  background-color: var(--bay-navy-bg-2);
+  border-top: 2px solid var(--bay-blue-deep);
+  color: var(--starman-cream);
+}
+
+/* リボンのアイコン hover をライトブルーに */
+body.theme-dark .side-dock-ribbon-action:hover,
+body.theme-dark .workspace-ribbon .sidebar-action-button:hover {
+  color: var(--bay-light-blue);
+}
+
+/* ボタン（mod-cta） */
+body.theme-dark button.mod-cta {
+  background-color: var(--bay-blue);
+  color: #04111F;
+}
+body.theme-dark button.mod-cta:hover {
+  background-color: var(--bay-light-blue);
+}
+
+/* インラインコード・コードブロック */
+body.theme-dark code {
+  border: 1px solid rgba(79, 195, 247, 0.22);
+  border-radius: 4px;
+}
+body.theme-dark .markdown-preview-view pre,
+body.theme-dark .markdown-rendered pre {
+  border: 1px solid rgba(79, 195, 247, 0.3);
+  border-left: 4px solid var(--bay-blue);
+  border-radius: 8px;
+}
+
+/* 引用ブロック：角を丸く */
+body.theme-dark .markdown-preview-view blockquote,
+body.theme-dark .markdown-rendered blockquote {
+  border-radius: 0 8px 8px 0;
+}
+
+/* mark（==ハイライト==）は文字色を濃紺に固定 */
+body.theme-dark mark {
+  color: #1A1400;
+}
